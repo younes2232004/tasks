@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-\ class Task10 extends StatefulWidget {
+
+class Task10 extends StatefulWidget {
   const Task10({super.key});
 
   @override
@@ -13,7 +14,8 @@ class _Task10State extends State<Task10> {
   String sample = "Loading...";
 
   void fetchAllProducts() async {
-    var request = http.Request('GET', Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+    var request = http.Request(
+        'GET', Uri.parse('https://jsonplaceholder.typicode.com/posts'));
 
     http.StreamedResponse response = await request.send();
 
