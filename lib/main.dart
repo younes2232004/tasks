@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tasks/providar/login_provider.dart';
+import 'package:tasks/providar/product_provider.dart';
 
 // import 'tasks/task1.dart';
 // import 'tasks/task2.dart';
-import 'providar/login_provider.dart';
-import 'providar/product_provider.dart';
 import 'tasks/task11.dart';
 import 'tasks/task5.dart';
 import 'tasks/task6.dart';
@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
