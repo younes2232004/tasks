@@ -1,20 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tasks/providar/product_provider.dart';
-
-// import 'tasks/task1.dart';
-// import 'tasks/task2.dart';
-import 'components/task16.dart';
-import 'providar/login_provider.dart';
-import 'providers/login_provider.dart';
-import 'providers/product_provider.dart';
-import 'tasks/task11.dart';
-import 'tasks/task5.dart';
-import 'tasks/task6.dart';
-import 'tasks/task7.dart';
-import 'tasks/task8.dart';
 import 'package:provider/provider.dart';
-
-import 'views/product_view_widget.dart';
+import 'providers/product_provider.dart';
+import 'providers/login_provider.dart';
+import 'components/task16.dart';
 
 void main() {
   runApp(
@@ -31,23 +19,64 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Flutter Project',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // this is task selector
-      //home: const Task1(),
-      //home: const Task2(),
-      //home: ProductViewWidget(),
-      home: Task16(),
+      home: const Task16(),
     );
   }
+}
 
-  Task16() {}
+// providers/product_provider.dart
+
+class ProductProvider with ChangeNotifier {
+  List<String> _products = [];
+  List<String> get products => _products;
+
+  void addProduct(String product) {
+    _products.add(product);
+    notifyListeners();
+  }
+
+  void removeProduct(String product) {
+    _products.remove(product);
+    notifyListeners();
+  }
+}
+
+// providers/login_provider.dart
+
+class LoginProvider with ChangeNotifier {
+  bool _isLoggedIn = false;
+  bool get isLoggedIn => _isLoggedIn;
+
+  void login() {
+    _isLoggedIn = true;
+    notifyListeners();
+  }
+
+  void logout() {
+    _isLoggedIn = false;
+    notifyListeners();
+  }
+}
+
+// components/task16.dart
+
+class Task16 extends StatelessWidget {
+  const Task16({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Task 16')),
+      body: const Center(child: Text('This is Task 16 Screen')),
+    );
+  }
 }
