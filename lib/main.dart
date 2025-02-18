@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'providers/product_provider.dart';
-import 'providers/login_provider.dart';
-import 'components/task16.dart';
 
 void main() {
   runApp(
@@ -36,6 +33,7 @@ class MyApp extends StatelessWidget {
 // providers/product_provider.dart
 
 class ProductProvider with ChangeNotifier {
+  // ignore: prefer_final_fields
   List<String> _products = [];
   List<String> get products => _products;
 
