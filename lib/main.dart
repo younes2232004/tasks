@@ -39,10 +39,10 @@ class MyApp extends StatelessWidget {
       //home: const Task1(),
       //home: const Task2(),
 
-      home: Task17(),
+      home: AuthScreen(),
     );
   }
 }
 
-Task17() {
+AuthScreen() {
 }
